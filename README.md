@@ -1,2 +1,3 @@
-# sailsjs-jwt-login
-SailJS Starter with JWT Login
+# SailJS JWT Login
+
+a [Sails](http://sailsjs.org) application

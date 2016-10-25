@@ -1,0 +1,32 @@
+<h1 class="modal-title">Signup</h1>
+<div class="box">
+    <form name="userForm" ng-submit="register(userForm.$valid)" novalidate>
+    <label class="label">Email</label>
+    <p class="control">
+    <input name="email" class="input" ng-class="{'is-danger': userForm.email.$invalid && !userForm.email.$pristine }" type="email" placeholder="jsmith@example.org" ng-model="user.email" required>
+    <span ng-show="userForm.email.$invalid  && !userForm.email.$pristine" class="help is-danger">This email is invalid</span>
+    </p>
+    <hr>
+    <label class="label">Password</label>
+    <p class="control">
+    <input id="firstPassword" name="password" class="input" ng-class="{'is-danger': userForm.password.$invalid && !userForm.password.$pristine }" type="password" placeholder="●●●●●●●" ng-model="user.password" ng-minlength="8" required>
+    <span ng-show="userForm.password.$error.minlength && !userForm.password.$pristine" class="help is-danger">Password is too short.</span>
+    </p>
+    <label class="label">Confirm Password</label>
+    <p class="control">
+    <input name="confirmPassword" class="input" ng-class="{'is-danger': userForm.confirmPassword.$invalid && !userForm.confirmPassword.$pristine }" type="password" placeholder="●●●●●●●" ng-model="user.confirmPassword" ng-minlength="8" required password-check="firstPassword">
+    <span ng-show="userForm.confirmPassword.$error.minlength && !userForm.confirmPassword.$pristine" class="help is-danger">Password is too short.</span>
+    <span ng-show='userForm.confirmPassword.$error.pwmatch && !userForm.password.$pristine && !userForm.confirmPassword.$pristine && !userForm.confirmPassword.$error.minlength' class='help is-danger'>Passwords don't match.</span>
+    </p>
+    <hr>
+    <p class="control">
+    <button class="button is-primary" ng-click="register()" ng-class="{'is-loading': registerInProgress }">Register</button>
+    <button class="button is-default" ng-click="togglePopup()">Cancel</button>
+    <span class="help is-danger is-active" ng-repeat="error in errors">{{error.err}}</span>
+    </p>
+</div>
+<p class="has-text-centered">
+    <a href="#" ng-click="togglePopup();openLogin()">Login</a>
+    | 
+    <a href="#!/help/" ng-click="togglePopup()">Need help?</a>
+</p>

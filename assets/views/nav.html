@@ -1,0 +1,52 @@
+  <nav class="nav has-shadow" id="top">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item" href="../index.html">
+          <img src="../images/bulma.png" alt="Description">
+        </a>
+      </div>
+      <span class="nav-toggle" menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab is-active">
+          Home
+        </a>
+        <a class="nav-item is-tab">
+          Features
+        </a>
+        <a class="nav-item is-tab">
+          Team
+        </a>
+        <a class="nav-item is-tab">
+          Help
+        </a>
+        <span class="nav-item">
+          <a class="button" ng-click="openLogin()" ng-hide="auth.isAuthenticated()">
+            Log in
+          </a>
+          <a class="button is-info" ng-click="openSignup()" ng-hide="auth.isAuthenticated()">
+            Sign up
+          </a>
+          <a class="button is-info" ng-click="logout()" ng-show="auth.isAuthenticated()">
+            Logout
+          </a>
+            
+          
+        </span>
+      </div>
+    </div>
+  </nav>
+
+<!-- Modal for nav menu -->
+<div id="modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div ng-include="'views/login.html'" ng-show="showLogin && !showForgot"></div>
+    <div ng-include="'views/signup.html'" ng-show="!showLogin && !showForgot"></div>
+    <div ng-include="'views/forgot-password.html'" ng-show="showForgot"></div>
+  </div>
+  <button class="modal-close" ng-click="togglePopup()"></button>
+</div>
