@@ -1,6 +1,6 @@
 # Sails JWT Starter
 
-[Sails](http://sailsjs.org) + JWT + Angular + Bulma = Awesome
+[Sails](http://sailsjs.org) + [JWT](https://jwt.io/) + [Angular](https://angularjs.org/) + [Bulma](http://bulma.io) = Awesome
 
 This repo is an example of using SailsJS, an Angular frontend, JWT and the awesome [bulma](http://bulma.io) CSS framework. It contains signup, login and reset popup and a very simple skeleton page base upon the [free bulma templates](https://dansup.github.io/bulma-templates/).
 
