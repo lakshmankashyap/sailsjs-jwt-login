@@ -19,10 +19,6 @@ module.exports = {
     encryptedPassword: {
       type: 'string'
     },
-    messages: {
-      collection: 'message',
-      via: 'user'
-    },
     toJSON: function() {
       var obj = this.toObject();
       delete obj.encryptedPassword;
